@@ -17,20 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-
-
-
-
-
-
-
-
+//crud operation
+Route::resource('/contact', ContactController::class);
 
 
 //authenticatins - lavavel-ui
-
-Route::resource('/contact', ContactController::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

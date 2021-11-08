@@ -4,8 +4,8 @@
   <div class="card-header">Contactus Page</div>
   <div class="card-body">
       
-      <form action="{{ url('contact/' .$contacts->id) }}" method="post">
-        {!! csrf_field() !!}
+      <form action="{{ route('contact.update' ,[$contacts->id]) }}" method="post">
+        @csrf
         @method("PATCH")
         <input type="hidden" name="id" id="id" value="{{$contacts->id}}" id="id" />
         <label>Name</label> <br>

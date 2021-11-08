@@ -14,11 +14,11 @@ class DeviceController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function add(Request $req){
+    public function add(Request $request){
         
            $device = new Device;
-        $device->name= $req->name;
-        $device->device= $req->device;
+        $device->name= $request->name;
+        $device->device= $request->device;
       
         $result=$device->save();
         

@@ -4,8 +4,8 @@
   <div class="card-header">Contactus Page</div>
   <div class="card-body">
       
-      <form action="{{ url('contact') }}" method="post">
-        {!! csrf_field() !!}
+      <form action="{{ route('contact.store') }}" method="post">
+        @csrf
         <label>Name</label><br>
         <input type="text" name="name" id="name" class="form-control"></br>
         <label>Address</label><br>
