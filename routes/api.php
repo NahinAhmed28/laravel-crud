@@ -2,6 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\apiController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\DeviceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +20,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get("data", [apiController::class,'getData']);
+Route::get("list/{id?}", [UserController::class,'list']);
+
+Route::get("device", [DeviceController::class,'show']);
+
+Route::post("add", [DeviceController::class,'add']);
