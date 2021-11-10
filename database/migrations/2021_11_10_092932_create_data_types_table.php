@@ -16,8 +16,8 @@ class CreateDataTypesTable extends Migration
         Schema::create('data_types', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->binary('data');
-            $table->boolean('confirmed');
+            $table->binary('data')->nullable();
+            $table->boolean('confirmed')->nullable();
             $table->char('name');
 
 

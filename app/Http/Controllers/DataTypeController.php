@@ -16,7 +16,8 @@ class DataTypeController extends Controller
     public function index()
     {
         $data = DataType::all();
-        return view ('Datatype.index')->with('datas', $data);
+
+        return view('Datatype.index', compact('data'));
     }
 
 
@@ -37,9 +38,11 @@ class DataTypeController extends Controller
      */
     public function store(Request $request)
     {
-        $input = $request->all();
-        DataType::create($input);
-        return redirect('datatype.index')->with('flash_message', 'datatype Addedd!');
+        $datatype = new DataType();
+        $datatype->name=$request->name;
+        $datatype->email=$request->email;
+        $datatype->save();
+        return redirect("datatype");
     }
 
     /**

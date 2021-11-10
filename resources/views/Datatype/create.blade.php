@@ -1,19 +1,20 @@
-@extends('contacts.layout')
+@extends('layouts.layout')
 @section('content')
-<div class="card">
-  <div class="card-header">Contactus Page</div>
-  <div class="card-body">
+    <div class="card">
+        <div class="card-header">Contactus Page</div>
+        <div class="card-body">
 
-      <form action="{{ route('Datatype.store') }}" method="post">
-        @csrf
-        <label>Name</label><br>
-        <input type="text" name="name" id="name" class="form-control"></br>
-        <label>Address</label><br>
-        <input type="text" name="email" id="address" class="form-control"></br>
+            <form action="{{ route('datatype.store') }}" method="post">
+                @csrf
+                <label>Name</label><br>
+                <input type="text" name="name" id="name" class="form-control"></br>
+                <label>Address</label><br>
+                <input type="text" name="address" id="address" class="form-control"></br>
+                <label>Mobile</label><br>
+                <input type="text" name="mobile" id="mobile" class="form-control"></br>
+                <input type="submit" value="Save" class="btn btn-success"></br>
+            </form>
 
-        <input type="submit" value="Save" class="btn btn-success"></br>
-    </form>
-
-  </div>
-</div>
+        </div>
+    </div>
 @stop
