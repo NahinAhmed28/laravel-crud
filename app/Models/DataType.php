@@ -8,6 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class DataType extends Model
 {
     use HasFactory;
-    protected $table = 'contacts';
-
+    protected $guarded = ['id'];
 }

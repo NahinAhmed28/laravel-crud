@@ -9,6 +9,11 @@
                         <a href="{{ url('/contact/create') }}" class="btn btn-success btn-sm" title="Add New Contact">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
                         </a>
+
+
+                        <a href="{{route('datatype.index')}}" style="float: right" class="btn btn-success btn-sm" title="Add New Contact">
+                            <i class="fa fa-plus" aria-hidden="true"></i> Add New DataType
+                        </a>
                         <br/>
                         <br/>
                         <div class="table-responsive">
@@ -20,6 +25,8 @@
                                         <th>Address</th>
                                         <th>Telephone</th>
                                         <th>Actions</th>
+                                        <th>Created </th>
+                                        <th>Updated </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -39,6 +46,9 @@
                                                 <button type="submit" class="btn btn-danger btn-sm" title="Delete Contact" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
                                             </form>
                                         </td>
+                                        <td>{{$item->created_at->diffForHumans() }}</td>
+                                        <td>{{$item->updated_at->diffForHumans() }}</td>
+
                                     </tr>
                                 @endforeach
                                 </tbody>

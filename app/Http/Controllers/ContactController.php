@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 
+
 class ContactController extends Controller
 {
     /**
@@ -38,7 +39,7 @@ class ContactController extends Controller
     {
         $input = $request->all();
         Contact::create($input);
-        return redirect('contact')->with('flash_message', 'Contact Addedd!'); 
+        return redirect('contact')->with('flash_message', 'Contact Addedd!');
     }
 
     /**
@@ -77,7 +78,7 @@ class ContactController extends Controller
         $contact = Contact::find($id);
         $input = $request->all();
         $contact->update($input);
-        return redirect('contact')->with('flash_message', 'Contact Updated!'); 
+        return redirect('contact')->with('flash_message', 'Contact Updated!');
     }
 
     /**

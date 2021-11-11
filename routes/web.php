@@ -16,8 +16,8 @@ use App\Http\Controllers\DataTypeController;
 
 Route::get('/', [ContactController::class, 'index']);
 
-// data_type crud operation
-Route::resource('/Datatype', DataTypeController::class);
+// data_type crud operation;
+Route::resource('datatype', DataTypeController::class);
 
 
 

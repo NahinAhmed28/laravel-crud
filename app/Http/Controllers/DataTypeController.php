@@ -2,12 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Contact;
 use App\Models\DataType;
 use Illuminate\Http\Request;
 
 class DataTypeController extends Controller
 {
+
+    protected $model;
+
+    public function __construct(DataType $dataType)
+    {
+        $this->model = $dataType;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,11 +22,8 @@ class DataTypeController extends Controller
      */
     public function index()
     {
-        $data = DataType::all();
-
-        return view('Datatype.index', compact('data'));
+         return  view('Datatype.index');
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -27,9 +31,10 @@ class DataTypeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-{
-    return view('Datatype.create');
-}
+    {
+        return view('Datatype.create');
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -38,11 +43,32 @@ class DataTypeController extends Controller
      */
     public function store(Request $request)
     {
-        $datatype = new DataType();
-        $datatype->name=$request->name;
-        $datatype->email=$request->email;
-        $datatype->save();
-        return redirect("datatype");
+
+
+
+
+        $query= $this->model->create([
+
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'phone'=>$request->phone,
+            'education'=>implode(",",$request->input('education',[]))
+
+//            'votes'=>$request->input('confirmed',[]),
+//            'confirmed'=>$request->votes
+
+
+
+        ]);
+
+        if ($query)
+        {
+            return redirect()->route('datatype.index');
+        }else
+        {
+            return redirect()->route('datatype.create');
+
+        }
     }
 
     /**
@@ -90,3 +116,4 @@ class DataTypeController extends Controller
         //
     }
 }
+

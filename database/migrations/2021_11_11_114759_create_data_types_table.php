@@ -15,12 +15,15 @@ class CreateDataTypesTable extends Migration
     {
         Schema::create('data_types', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
-            $table->binary('data')->nullable();
+            $table->string('name');
+            $table->string('email');
+            $table->string('phone');
+            $table->string('education');
+
             $table->boolean('confirmed')->nullable();
-            $table->char('name');
+            $table->integer('votes')->nullable();
 
-
+            $table->timestamps();
         });
     }
 
