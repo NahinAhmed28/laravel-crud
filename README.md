@@ -1,14 +1,25 @@
 # Laravel CRUD
 
-Laravel CRUD is a Laravel application focused on create, read, update, and delete workflows. It is useful as a starter or practice project for Laravel routing, controllers, models, migrations, and Blade/UI integration.
+Laravel CRUD is a Laravel application for database-backed create, read, update, and delete workflows.
 
-## Project Details
+## Features
 
-- Repository: `NahinAhmed28/laravel-crud`
-- Default branch: `master`
-- Visibility: public
-- Project type: Laravel CRUD application
-- Main focus: database-backed CRUD operations
+- CRUD workflow foundation
+- Database-backed records and forms
+- Laravel controller/model structure
+- Blade/Vite front-end asset workflow
+
+## Modules
+
+- Entity module: managed records, fields, and validation
+- Controller module: CRUD request handling
+- View module: list, create, edit, show, and delete screens
+- Data module: migrations, models, seeders, and database persistence
+- Route module: web routes and resource endpoints
+
+## System Architecture
+
+The system follows Laravel MVC architecture. Routes send requests to controllers, controllers validate input and coordinate actions, models persist records, and views render CRUD screens. The database stores application entities and migration-defined schema.
 
 ## Getting Started
 
@@ -22,13 +33,3 @@ npm install
 npm run dev
 php artisan serve
 ```
-
-Configure the database in `.env`, then run migrations if the project includes them.
-
-```bash
-php artisan migrate
-```
-
-## Notes
-
-Document model names, routes, seeders, and screenshots as the application becomes more complete.
